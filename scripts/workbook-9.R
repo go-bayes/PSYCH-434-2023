@@ -888,7 +888,6 @@ summary(est_all)
 
 
 
-
 ###### ###### ###### TRY ONLY G-COMPUTATION (leaving out Propensity Scores) ###### ######
 
 # check formula:

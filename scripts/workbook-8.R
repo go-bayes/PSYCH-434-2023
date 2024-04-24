@@ -578,7 +578,7 @@ family = "gaussian"
 continuous_X = FALSE
 splines = FALSE
 cores = parallel::detectCores()
-S = "t0_eth_cat"
+subclass = "t0_eth_cat"
 
 # not we interact the subclass X treatment X covariates
 
@@ -609,15 +609,7 @@ fit_all_all  <- glm(
   data = df
 )
 
-summary(fit_all_all)
 
-coefs <- coef(fit_all_all)
-table(is.na(coefs))#     t0_eth_catmāori:t1_perfectionism_coarsen.Q:t0_gen_cohort.C
-
-# #FALSE  TRUE
-# 344     4
-
-insight::get_varcov(fit_all_all)
 
 # simulate coefficients
 sim_model_all <- sim(fit_all_all, n = nsims, vcov = "HC1")
@@ -628,7 +620,7 @@ sim_estimand_all_e <- sim_ame(
   sim_model_all,
   var = X,
   cl = cores,
-  subset = t0_eth_cat == "euro",
+  subset = t0_eth_cat == "euro", would need to specify
   verbose = FALSE
 )
 
@@ -642,7 +634,7 @@ sim_estimand_all_m <- sim_ame(
   sim_model_all,
   var = X,
   cl = cores,
-  subset = t0_eth_cat == "māori",
+  subset = t0_eth_cat == "māori",  # would need to
   verbose = FALSE
 )
 
@@ -672,7 +664,15 @@ summary(est_all)
 
 
 
+summary(fit_all_all)
 
+coefs <- coef(fit_all_all)
+table(is.na(coefs))#     t0_eth_catmāori:t1_perfectionism_coarsen.Q:t0_gen_cohort.C
+
+# #FALSE  TRUE
+# 344     4
+
+insight::get_varcov(fit_all_all)
 ###### ###### ###### TRY ONLY G-COMPUTATION (leaving out Propensity Scores) ###### ######
 
 # check formula:
