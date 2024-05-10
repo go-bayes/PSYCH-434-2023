@@ -17,7 +17,7 @@ format:
 
 ## Overview
 
-Today, we dive deep into data analysis for causal inference ast it applies to observational cultural psychology. By the end, you will:
+Today,we will do an analysis. By the end, you will:
 
 -   Better understand how to integrate measurement theory with causal inference
 -   Enhance your proficiency in causal analysis using doubly robust methods
@@ -25,7 +25,7 @@ Today, we dive deep into data analysis for causal inference ast it applies to ob
 
 ## Set up your workspace Preparing for the Journey
 
-To kick things off, we will set up our environment. We'll source essential functions, load necessary libraries, and import synthetic data for our exploration.
+We set up our environment.  We'll source essential functions, load necessary libraries, and import synthetic data for our exploration.
 
 ```{r}
 #| label: load_libraries
@@ -210,9 +210,9 @@ This analysis has practical motivation, as the effects of exercise on mental hea
 
 Our initial responses will be guided by the NZAVS measure of exercise, focusing on the hours of activity per week, the 1-year effect on Kessler-6 depression after initiating a change in exercise, and a particular emphasis on effect-modification by NZ European and Māori ethnic identification. This analysis has practical motivation, as the effects of exercise on mental health and possible differences between cultural groups remain largely uncharted territory.
 
-### Sculpting the Data: A Hands-On Approach
+### Sculpting the Data
 
-As we venture further, we'll perform a series of transformations to shape our data according to our needs. Our process will involve:
+We perform a series of transformations to shape our data according to our needs. Our process will involve:
 
 1.  Constructing a Kessler 6 average score
 2.  Building a Kessler 6 sum score

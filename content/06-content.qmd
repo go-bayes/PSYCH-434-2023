@@ -1,12 +1,26 @@
 ---
-title: "Dealing with Data (Partial Invariance)"
-date: "2023-APR-04"
-author:
-    name: Torven Schalk
-    email: torven.schalk@vuw.ac.nz
-    corresponding: yes
+title: "Causal Diagrams: The Structures of Interaction/Effect Modification, Measurement Bias, Selection Bias"
+date: "2023-MAR-28"
+bibliography: /Users/joseph/GIT/templates/bib/references.bib
+editor_options: 
+  chunk_output_type: console
+format:
+  html:
+    warnings: FALSE
+    error: FALSE
+    messages: FALSE
+    code-overflow: scroll
+    highlight-style: oblivion
+    code-tools:
+      source: true
+      toggle: FALSE
+html-math-method: katex
+reference-location: margin
+citation-location: margin
+cap-location: margin
+code-block-border-left: true
 ---
-  
+
   
 ## Overview
   

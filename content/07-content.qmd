@@ -246,8 +246,6 @@ E(\delta) = E(Y^{a=1} - Y^{a=0})\\
 
 ### Causal Consistency
 
-
-
 The fundamental problem of causal inference is that an individual cannot receive two different exposures at the same time. For a binary exposure, an observed outcome under an exposure can be can be expressed: 
 
 $$Y^{observed} = AY^{a=1} + (1-A)Y^{a=0}$$
