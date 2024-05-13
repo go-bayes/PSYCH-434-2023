@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.523">
+<meta name="generator" content="quarto-1.5.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Joseph Bulbulia">
 <meta name="dcterms.date" content="2023-06-06">
 
-<title>PSYC 434 Conducting Research Across Cultures: Trimester 1, 2023 - Template: Stratified Causal Estimatation</title>
+<title>PSYC 434 Conducting Research Across Cultures: Trimester 1, 2023 – Template: Stratified Causal Estimatation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -143,6 +143,33 @@ div.csl-indent {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -232,7 +259,7 @@ div.csl-indent {
   </li>
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -355,9 +382,9 @@ div.csl-indent {
 <p>Answer the following:</p>
 <ul>
 <li>State the Question: is my question clearly stated? If not, state it.</li>
-<li>Relevance of the Question: Have I explained its importance? If not, explain.</li>
+<li>Relevance of the Question: have I explained its importance? If not, explain.</li>
 <li>Subgroup Analysis: Does my question involve a subgroup (e.g., cultural group)? If not, develop a subgroup analysis question.</li>
-<li>Causality of the Question: Is my question causal? Briefly explain what this means with reference to the potential outcomes framework.</li>
+<li>Causality of the Question: is my question causal? Briefly explain what this means with reference to the potential outcomes framework.</li>
 <li>State how you will use time-series data to address causality.</li>
 <li>Define your exposure.</li>
 <li>Define your outcome(s)</li>
@@ -374,11 +401,11 @@ div.csl-indent {
 <li>Discuss how your sample relates to the “source population” (lecture 9.)</li>
 <li>Explain NZAVS measures. State the questions used in the items</li>
 <li>In your own words describe how the data meet the following assumptions required for causal inference:</li>
-<li>Positivity: Can we intervene on the exposure at all levels of the covariates? Use the code I provided to test whether there is change in the exposure from the baseline in the source population(s)</li>
-<li>Consistency: Can I interpret what it means to intervene on the exposure?</li>
-<li>Exchangeability: Are different versions of the exposure conditionally exchangeable given measured baseline confounders? This requires stating baseline confounders and explaining how they may be related to both the exposure and outcome. As part of this, <strong>you must explain why the baseline measure of your exposure and outcome are included as potential confounders.</strong></li>
-<li>Note: Unmeasured Confounders: Does previous science suggest the presence of unmeasured confounders? (e.g.&nbsp;childhood exposures that are not measured).</li>
-<li>Draw a causal diagram: Have I drawn a causal diagram (DAG) to highlight both measured and unmeasured sources of confounding?</li>
+<li>Positivity: can we intervene on the exposure at all levels of the covariates? Use the code I provided to test whether there is change in the exposure from the baseline in the source population(s)</li>
+<li>Consistency: can I interpret what it means to intervene on the exposure?</li>
+<li>Exchangeability: are different versions of the exposure conditionally exchangeable given measured baseline confounders? This requires stating baseline confounders and explaining how they may be related to both the exposure and outcome. As part of this, <strong>you must explain why the baseline measure of your exposure and outcome are included as potential confounders.</strong></li>
+<li>Note: Unmeasured Confounders: does previous science suggest the presence of unmeasured confounders? (e.g.&nbsp;childhood exposures that are not measured).</li>
+<li>Draw a causal diagram: have I drawn a causal diagram (DAG) to highlight both measured and unmeasured sources of confounding?</li>
 <li>Measurement Error: Have I described potential biases from measurement errors? Return to lecture 11.</li>
 <li>State that you do not have missing data in this synthetic dataset, but that ordinarily missing data would need to be handled.</li>
 <li>State what your estimator will be. Note I’ve given you the following text to modify:</li>
@@ -647,16 +674,16 @@ div.csl-indent {
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">transition_table</span>(out, state_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$explanation
-[1] "This transition matrix describes the shifts from one state to another between the baseline wave and the following wave. The numbers in the cells represent the number of individuals who transitioned from one state (rows) to another (columns). For example, the cell in the first row and second column shows the number of individuals who transitioned from the first state (indicated by the left-most cell in the row) to the second state. The top left cell shows the number of individuals who remained in the first state."
+[1] "The table presents a transition matrix that describes stability and movement between the treatment from the baseline wave to the treatment wave. Entries on the diagonal (in bold) indicate the number of individuals who stayed in their initial state. In contrast, the off-diagonal shows the transitions from the initial state (bold) to another state the following wave (off diagnal). A cell located at the intersection of row $i$ and column $j$, where $i \neq j$, presents the count of individuals moving from state $i$ to state $j$."
 
 $table
 
 
-|      From       | Inactive | Somewhat Active | Active |
-|:---------------:|:--------:|:---------------:|:------:|
-|    Inactive     |   2186   |      1324       |  295   |
-| Somewhat Active |   1019   |      2512       |  811   |
-|     Active      |   204    |       668       |  981   |</code></pre>
+|      From       | Inactive | Somewhat Active | Active  |
+|:---------------:|:--------:|:---------------:|:-------:|
+|    Inactive     | **2186** |      1324       |   295   |
+| Somewhat Active |   1019   |    **2512**     |   811   |
+|     Active      |   204    |       668       | **981** |</code></pre>
 </div>
 </div>
 <p>Next consider Māori only</p>
@@ -673,7 +700,8 @@ $table
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#interpretation</span></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(t_tab_m<span class="sc">$</span>explanation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>This transition matrix describes the shifts from one state to another between the baseline wave and the following wave. The numbers in the cells represent the number of individuals who transitioned from one state (rows) to another (columns). For example, the cell in the first row and second column shows the number of individuals who transitioned from the first state (indicated by the left-most cell in the row) to the second state. The top left cell shows the number of individuals who remained in the first state.</code></pre>
+<pre><code>The table presents a transition matrix that describes stability and movement between the treatment from the baseline wave to the treatment wave. Entries on the diagonal (in bold) indicate the number of individuals who stayed in their initial state. In contrast, the off-diagonal shows the transitions from the initial state (bold) to another state the following wave (off diagnal). A cell located at the intersection of row $i$ and column $j$, where $i 
+eq j$, presents the count of individuals moving from state $i$ to state $j$.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_tab_m<span class="sc">$</span>table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -681,9 +709,9 @@ $table
 
 |      From       | Inactive | Somewhat Active | Active |
 |:---------------:|:--------:|:---------------:|:------:|
-|    Inactive     |   187    |       108       |   24   |
-| Somewhat Active |    92    |       188       |   61   |
-|     Active      |    28    |       58        |   75   |</code></pre>
+|    Inactive     | **187**  |       108       |   24   |
+| Somewhat Active |    92    |     **188**     |   61   |
+|     Active      |    28    |       58        | **75** |</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -700,18 +728,19 @@ $table
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#interpretation</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(t_tab_e<span class="sc">$</span>explanation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>This transition matrix describes the shifts from one state to another between the baseline wave and the following wave. The numbers in the cells represent the number of individuals who transitioned from one state (rows) to another (columns). For example, the cell in the first row and second column shows the number of individuals who transitioned from the first state (indicated by the left-most cell in the row) to the second state. The top left cell shows the number of individuals who remained in the first state.</code></pre>
+<pre><code>The table presents a transition matrix that describes stability and movement between the treatment from the baseline wave to the treatment wave. Entries on the diagonal (in bold) indicate the number of individuals who stayed in their initial state. In contrast, the off-diagonal shows the transitions from the initial state (bold) to another state the following wave (off diagnal). A cell located at the intersection of row $i$ and column $j$, where $i 
+eq j$, presents the count of individuals moving from state $i$ to state $j$.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># table</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_tab_e<span class="sc">$</span>table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 
-|      From       | Inactive | Somewhat Active | Active |
-|:---------------:|:--------:|:---------------:|:------:|
-|    Inactive     |   1843   |      1136       |  259   |
-| Somewhat Active |   870    |      2208       |  712   |
-|     Active      |   167    |       583       |  863   |</code></pre>
+|      From       | Inactive | Somewhat Active | Active  |
+|:---------------:|:--------:|:---------------:|:-------:|
+|    Inactive     | **1843** |      1136       |   259   |
+| Somewhat Active |   870    |    **2208**     |   712   |
+|     Active      |   167    |       583       | **863** |</code></pre>
 </div>
 </div>
 <p>Overall we find evidence for change in the exposure variable. This suggest that we are ready to proceed with the next step of causal estimation.</p>
@@ -742,7 +771,7 @@ $table
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-dag-6" class="quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-dag-6" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dag-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="12-content_files/figure-html/fig-dag-6-1.png" class="img-fluid figure-img" style="width:100.0%">
@@ -877,6 +906,7 @@ See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.</co
 <span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> dt_new,</span>
 <span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">overall =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <div class="Rtable1">
 <table class="Rtable1 table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
@@ -1194,6 +1224,7 @@ See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.</co
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1734,7 +1765,7 @@ Weighted     220.54 321.09       76.39</code></pre>
 <span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>tab_e <span class="ot">&lt;-</span> <span class="fu">sub_tab_ate</span>(sum_e, <span class="at">new_name =</span> <span class="st">"NZ Euro Anxiety"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `dplyr::mutate()`.
-ℹ In argument: `across(where(is.numeric), round, digits = 4)`.
+ℹ In argument: `across(where(is.numeric), round, digits = 2)`.
 Caused by warning:
 ! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
 Supply arguments directly to `.fns` through an anonymous function instead.
@@ -1762,14 +1793,14 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 5%">
+<col style="width: 14%">
+<col style="width: 14%">
 <col style="width: 5%">
 <col style="width: 6%">
+<col style="width: 7%">
 <col style="width: 10%">
 <col style="width: 9%">
-<col style="width: 34%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1786,23 +1817,23 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">NZ Euro Anxiety</td>
-<td style="text-align: right;">-0.077</td>
-<td style="text-align: right;">-0.131</td>
-<td style="text-align: right;">-0.022</td>
-<td style="text-align: right;">1.352</td>
-<td style="text-align: right;">1.167</td>
+<td style="text-align: right;">-0.08</td>
+<td style="text-align: right;">-0.13</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">1.36</td>
+<td style="text-align: right;">1.18</td>
 <td style="text-align: left;">negative</td>
-<td style="text-align: left;">-0.077 (-0.131–0.022) [EV 1.352/1.167]</td>
+<td style="text-align: left;">-0.08 (-0.13–0.02) [EV 1.36/1.18]</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Māori Anxiety</td>
-<td style="text-align: right;">0.027</td>
-<td style="text-align: right;">-0.114</td>
-<td style="text-align: right;">0.188</td>
-<td style="text-align: right;">1.183</td>
-<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">-0.11</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: right;">1.00</td>
 <td style="text-align: left;">unreliable</td>
-<td style="text-align: left;">0.027 (-0.114-0.188) [EV 1.183/1]</td>
+<td style="text-align: left;">0.03 (-0.11-0.19) [EV 1.2/1]</td>
 </tr>
 </tbody>
 </table>
@@ -1877,8 +1908,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interpret_results_subgroup</span>(big_tab, <span class="at">outcome =</span> <span class="st">"Anxiety"</span>, <span class="at">exposure =</span> <span class="st">"Excercise"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "For the NZ Euro Anxiety, our results suggest that Excercise may potentially influence Anxiety, with an estimated causal contrast value (E[Y(1)]-E[Y(0)]) of -0.077.\nThe associated confidence interval, ranging from -0.131 to -0.022, does not cross zero, providing more certainty in our estimate. The E-values indicate that any unmeasured confounder would need to have a minimum risk ratio of 1.352 with both the treatment and outcome to explain away the observed effect, and a minimum risk ratio of 1.167 to shift the confidence interval to include the null effect. This suggests we should interpret these findings with caution given uncertainty in the model."                                                                                                                                      
-[2] "For the Māori Anxiety, the data suggests a potential effect of Excercise on Anxiety, with a causal contrast value of 0.027.\nHowever, the confidence interval for this estimate, ranging from -0.114 to 0.188, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Anxiety and the Excercise by a risk ratio of 1.183 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Excercise on Anxiety for the Māori Anxiety, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."</code></pre>
+<pre><code>[1] "For the NZ Euro Anxiety, our results suggest that Excercise may potentially influence Anxiety, with an estimated causal contrast value (E[Y(1)]-E[Y(0)]) of -0.08.\nThe associated confidence interval, ranging from -0.13 to -0.02, does not cross zero, providing more certainty in our estimate. The E-values indicate that any unmeasured confounder would need to have a minimum risk ratio of 1.36 with both the treatment and outcome to explain away the observed effect, and a minimum risk ratio of 1.18 to shift the confidence interval to include the null effect. This suggests we should interpret these findings with caution given uncertainty in the model."                                                                                                                                      
+[2] "For the Māori Anxiety, the data suggests a potential effect of Excercise on Anxiety, with a causal contrast value of 0.03.\nHowever, the confidence interval for this estimate, ranging from -0.11 to 0.19, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Anxiety and the Excercise by a risk ratio of 1.2 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Excercise on Anxiety for the Māori Anxiety, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."</code></pre>
 </div>
 </div>
 <p>Easy!</p>
@@ -1907,6 +1938,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table class="lightable-material lightable-striped lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -1927,6 +1959,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </table>
 
 
+</div>
 </div>
 </div>
 <p>Another option for making the table using markdown. This would be useful if you were writing your article using qaurto.</p>
@@ -2099,14 +2132,14 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 5%">
 <col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 11%">
 <col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 30%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2123,23 +2156,23 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">NZ Euro Depression</td>
-<td style="text-align: right;">-0.039</td>
-<td style="text-align: right;">-0.099</td>
-<td style="text-align: right;">0.019</td>
-<td style="text-align: right;">1.231</td>
+<td style="text-align: right;">-0.04</td>
+<td style="text-align: right;">-0.10</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">1.23</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">unreliable</td>
-<td style="text-align: left;">-0.039 (-0.099-0.019) [EV 1.231/1]</td>
+<td style="text-align: left;">-0.04 (-0.1-0.02) [EV 1.23/1]</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Māori Depression</td>
-<td style="text-align: right;">0.028</td>
-<td style="text-align: right;">-0.125</td>
-<td style="text-align: right;">0.176</td>
-<td style="text-align: right;">1.190</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">1.20</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">unreliable</td>
-<td style="text-align: left;">0.028 (-0.125-0.176) [EV 1.19/1]</td>
+<td style="text-align: left;">0.03 (-0.12-0.18) [EV 1.2/1]</td>
 </tr>
 </tbody>
 </table>
@@ -2169,8 +2202,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interpret_results_subgroup</span>(big_tab_d, <span class="at">exposure =</span> <span class="st">"Exercise"</span>, <span class="at">outcome =</span> <span class="st">"Depression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "For the NZ Euro Depression, the data suggests a potential effect of Exercise on Depression, with a causal contrast value of -0.039.\nHowever, the confidence interval for this estimate, ranging from -0.099 to 0.019, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Depression and the Exercise by a risk ratio of 1.231 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Exercise on Depression for the NZ Euro Depression, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."
-[2] "For the Māori Depression, the data suggests a potential effect of Exercise on Depression, with a causal contrast value of 0.028.\nHowever, the confidence interval for this estimate, ranging from -0.125 to 0.176, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Depression and the Exercise by a risk ratio of 1.19 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Exercise on Depression for the Māori Depression, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."      </code></pre>
+<pre><code>[1] "For the NZ Euro Depression, the data suggests a potential effect of Exercise on Depression, with a causal contrast value of -0.04.\nHowever, the confidence interval for this estimate, ranging from -0.1 to 0.02, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Depression and the Exercise by a risk ratio of 1.23 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Exercise on Depression for the NZ Euro Depression, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."
+[2] "For the Māori Depression, the data suggests a potential effect of Exercise on Depression, with a causal contrast value of 0.03.\nHowever, the confidence interval for this estimate, ranging from -0.12 to 0.18, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Depression and the Exercise by a risk ratio of 1.2 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Exercise on Depression for the Māori Depression, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."     </code></pre>
 </div>
 </div>
 </section>
@@ -2198,6 +2231,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb62-19"><a href="#cb62-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb62-20"><a href="#cb62-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <table class="lightable-material lightable-striped lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -2218,6 +2252,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </table>
 
 
+</div>
 </div>
 </div>
 <p>Reporting might be:</p>
@@ -2272,7 +2307,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="co">#interpretation</span></span>
 <span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(t_tab_m_c<span class="sc">$</span>explanation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>This transition matrix describes the shifts from one state to another between the baseline wave and the following wave. The numbers in the cells represent the number of individuals who transitioned from one state (rows) to another (columns). For example, the cell in the first row and second column shows the number of individuals who transitioned from the first state (indicated by the left-most cell in the row) to the second state. The top left cell shows the number of individuals who remained in the first state.</code></pre>
+<pre><code>The table presents a transition matrix that describes stability and movement between the treatment from the baseline wave to the treatment wave. Entries on the diagonal (in bold) indicate the number of individuals who stayed in their initial state. In contrast, the off-diagonal shows the transitions from the initial state (bold) to another state the following wave (off diagnal). A cell located at the intersection of row $i$ and column $j$, where $i 
+eq j$, presents the count of individuals moving from state $i$ to state $j$.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t_tab_m_c<span class="sc">$</span>table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2280,11 +2316,11 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 
 |  From   | State 0 | State 1 | State 2 | State 3 | State 4 | State 5 |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| State 0 |   31    |   35    |   29    |    2    |    1    |    0    |
-| State 1 |   31    |   134   |   97    |   11    |    1    |    1    |
-| State 2 |   14    |   87    |   240   |   27    |    0    |    1    |
-| State 3 |    1    |   10    |   29    |   18    |    5    |    0    |
-| State 4 |    1    |    5    |    1    |    3    |    6    |    0    |</code></pre>
+| State 0 | **31**  |   35    |   29    |    2    |    1    |    0    |
+| State 1 |   31    | **134** |   97    |   11    |    1    |    1    |
+| State 2 |   14    |   87    | **240** |   27    |    0    |    1    |
+| State 3 |    1    |   10    |   29    | **18**  |    5    |    0    |
+| State 4 |    1    |    5    |    1    |    3    |  **6**  |    0    |</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># there is not much change in the extremes. We might decide that we would like to assign to all values above e.g. 20 the same value, or simply to exclude these values. </span></span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2820,8 +2856,8 @@ Weighted   647.62</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interpret_results_subgroup</span>(big_tab_d_c, <span class="at">outcome =</span> <span class="st">"Anxiety"</span>, <span class="at">exposure =</span> <span class="st">"Excercise"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "For the NZ Euro Anxiety, Continuous X, our results suggest that Excercise may potentially influence Anxiety, with an estimated causal contrast value (E[Y(1)]-E[Y(0)]) of -0.029.\nThe associated confidence interval, ranging from -0.053 to -0.006, does not cross zero, providing more certainty in our estimate. The E-values indicate that any unmeasured confounder would need to have a minimum risk ratio of 1.193 with both the treatment and outcome to explain away the observed effect, and a minimum risk ratio of 1.08 to shift the confidence interval to include the null effect. This suggests we should interpret these findings with caution given uncertainty in the model."                                                                                                                                                                      
-[2] "For the Māori Anxiety Anxiety, Continuous X, the data suggests a potential effect of Excercise on Anxiety, with a causal contrast value of -0.007.\nHowever, the confidence interval for this estimate, ranging from -0.072 to 0.062, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Anxiety and the Excercise by a risk ratio of 1.084 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Excercise on Anxiety for the Māori Anxiety Anxiety, Continuous X, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."</code></pre>
+<pre><code>[1] "For the NZ Euro Anxiety, Continuous X, our results suggest that Excercise may potentially influence Anxiety, with an estimated causal contrast value (E[Y(1)]-E[Y(0)]) of -0.03.\nThe associated confidence interval, ranging from -0.05 to -0.01, does not cross zero, providing more certainty in our estimate. The E-values indicate that any unmeasured confounder would need to have a minimum risk ratio of 1.19 with both the treatment and outcome to explain away the observed effect, and a minimum risk ratio of 1.08 to shift the confidence interval to include the null effect. This suggests we should interpret these findings with caution given uncertainty in the model."                                                                                                                                                                      
+[2] "For the Māori Anxiety Anxiety, Continuous X, the data suggests a potential effect of Excercise on Anxiety, with a causal contrast value of -0.01.\nHowever, the confidence interval for this estimate, ranging from -0.07 to 0.06, crosses zero, indicating considerable uncertainties. The E-values indicate that an unmeasured confounder that is associated with both the Anxiety and the Excercise by a risk ratio of 1.08 could explain away the observed associations, even after accounting for the measured confounders. This finding further reduces confidence in a true causal effect. Hence, while the estimates suggest a potential effect of Excercise on Anxiety for the Māori Anxiety Anxiety, Continuous X, the substantial uncertainty and possible influence of unmeasured confounders mean these findings should be interpreted with caution."</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -3049,18 +3085,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -3092,7 +3117,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -3144,6 +3191,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -3178,7 +3243,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -3193,27 +3262,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -3228,10 +3276,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -3240,8 +3292,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -3494,9 +3553,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb92-30"><a href="#cb92-30" aria-hidden="true" tabindex="-1"></a>Answer the following:</span>
 <span id="cb92-31"><a href="#cb92-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb92-32"><a href="#cb92-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the Question: is my question clearly stated? If not, state it.</span>
-<span id="cb92-33"><a href="#cb92-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Relevance of the Question: Have I explained its importance? If not, explain.</span>
+<span id="cb92-33"><a href="#cb92-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Relevance of the Question: have I explained its importance? If not, explain.</span>
 <span id="cb92-34"><a href="#cb92-34" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Subgroup Analysis: Does my question involve a subgroup (e.g., cultural group)? If not, develop a subgroup analysis question.</span>
-<span id="cb92-35"><a href="#cb92-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Causality of the Question: Is my question causal? Briefly explain what this means with reference to the potential outcomes framework.</span>
+<span id="cb92-35"><a href="#cb92-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Causality of the Question: is my question causal? Briefly explain what this means with reference to the potential outcomes framework.</span>
 <span id="cb92-36"><a href="#cb92-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State how you will use time-series data to address causality.</span>
 <span id="cb92-37"><a href="#cb92-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define your exposure.</span>
 <span id="cb92-38"><a href="#cb92-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define your outcome(s)</span>
@@ -3511,11 +3570,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb92-47"><a href="#cb92-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Discuss how your sample relates to the "source population" (lecture 9.)</span>
 <span id="cb92-48"><a href="#cb92-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain NZAVS measures. State the questions used in the items</span>
 <span id="cb92-49"><a href="#cb92-49" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>In your own words describe how the data meet the following assumptions required for causal inference:</span>
-<span id="cb92-50"><a href="#cb92-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Positivity: Can we intervene on the exposure at all levels of the covariates? Use the code I provided to test whether there is change in the exposure from the baseline in the source population(s)</span>
-<span id="cb92-51"><a href="#cb92-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Consistency: Can I interpret what it means to intervene on the exposure?</span>
-<span id="cb92-52"><a href="#cb92-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Exchangeability: Are different versions of the exposure conditionally exchangeable given measured baseline confounders? This requires stating baseline confounders and explaining how they may be related to both the exposure and outcome. As part of this, **you must explain why the baseline measure of your exposure and outcome are included as potential confounders.**</span>
-<span id="cb92-53"><a href="#cb92-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Note: Unmeasured Confounders: Does previous science suggest the presence of unmeasured confounders? (e.g. childhood exposures that are not measured).</span>
-<span id="cb92-54"><a href="#cb92-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Draw a causal diagram: Have I drawn a causal diagram (DAG) to highlight both measured and unmeasured sources of confounding?</span>
+<span id="cb92-50"><a href="#cb92-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Positivity: can we intervene on the exposure at all levels of the covariates? Use the code I provided to test whether there is change in the exposure from the baseline in the source population(s)</span>
+<span id="cb92-51"><a href="#cb92-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Consistency: can I interpret what it means to intervene on the exposure?</span>
+<span id="cb92-52"><a href="#cb92-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Exchangeability: are different versions of the exposure conditionally exchangeable given measured baseline confounders? This requires stating baseline confounders and explaining how they may be related to both the exposure and outcome. As part of this, **you must explain why the baseline measure of your exposure and outcome are included as potential confounders.**</span>
+<span id="cb92-53"><a href="#cb92-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Note: Unmeasured Confounders: does previous science suggest the presence of unmeasured confounders? (e.g. childhood exposures that are not measured).</span>
+<span id="cb92-54"><a href="#cb92-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Draw a causal diagram: have I drawn a causal diagram (DAG) to highlight both measured and unmeasured sources of confounding?</span>
 <span id="cb92-55"><a href="#cb92-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Measurement Error: Have I described potential biases from measurement errors? Return to lecture 11.</span>
 <span id="cb92-56"><a href="#cb92-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State that you do not have missing data in this synthetic dataset, but that ordinarily missing data would need to be handled.</span>
 <span id="cb92-57"><a href="#cb92-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State what your estimator will be. Note I've given you the following text to modify:</span>
@@ -5373,7 +5432,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb92-2015"><a href="#cb92-2015" aria-hidden="true" tabindex="-1"></a>                           <span class="at">x_lim_lo =</span> <span class="sc">-</span><span class="dv">1</span>,</span>
 <span id="cb92-2016"><a href="#cb92-2016" aria-hidden="true" tabindex="-1"></a>                           <span class="at">x_lim_hi =</span> <span class="fl">1.5</span>)</span>
 <span id="cb92-2017"><a href="#cb92-2017" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

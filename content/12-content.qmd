@@ -30,9 +30,9 @@ Your step-by-step guide to reporting is as follows:
 Answer the following:
 
 -   State the Question: is my question clearly stated? If not, state it.
--   Relevance of the Question: Have I explained its importance? If not, explain.
+-   Relevance of the Question: have I explained its importance? If not, explain.
 -   Subgroup Analysis: Does my question involve a subgroup (e.g., cultural group)? If not, develop a subgroup analysis question.
--   Causality of the Question: Is my question causal? Briefly explain what this means with reference to the potential outcomes framework.
+-   Causality of the Question: is my question causal? Briefly explain what this means with reference to the potential outcomes framework.
 -   State how you will use time-series data to address causality.
 -   Define your exposure.
 -   Define your outcome(s)
@@ -47,11 +47,11 @@ Answer the following:
 -   Discuss how your sample relates to the "source population" (lecture 9.)
 -   Explain NZAVS measures. State the questions used in the items
 -   In your own words describe how the data meet the following assumptions required for causal inference:
--   Positivity: Can we intervene on the exposure at all levels of the covariates? Use the code I provided to test whether there is change in the exposure from the baseline in the source population(s)
--   Consistency: Can I interpret what it means to intervene on the exposure?
--   Exchangeability: Are different versions of the exposure conditionally exchangeable given measured baseline confounders? This requires stating baseline confounders and explaining how they may be related to both the exposure and outcome. As part of this, **you must explain why the baseline measure of your exposure and outcome are included as potential confounders.**
--   Note: Unmeasured Confounders: Does previous science suggest the presence of unmeasured confounders? (e.g. childhood exposures that are not measured).
--   Draw a causal diagram: Have I drawn a causal diagram (DAG) to highlight both measured and unmeasured sources of confounding?
+-   Positivity: can we intervene on the exposure at all levels of the covariates? Use the code I provided to test whether there is change in the exposure from the baseline in the source population(s)
+-   Consistency: can I interpret what it means to intervene on the exposure?
+-   Exchangeability: are different versions of the exposure conditionally exchangeable given measured baseline confounders? This requires stating baseline confounders and explaining how they may be related to both the exposure and outcome. As part of this, **you must explain why the baseline measure of your exposure and outcome are included as potential confounders.**
+-   Note: Unmeasured Confounders: does previous science suggest the presence of unmeasured confounders? (e.g. childhood exposures that are not measured).
+-   Draw a causal diagram: have I drawn a causal diagram (DAG) to highlight both measured and unmeasured sources of confounding?
 -   Measurement Error: Have I described potential biases from measurement errors? Return to lecture 11.
 -   State that you do not have missing data in this synthetic dataset, but that ordinarily missing data would need to be handled.
 -   State what your estimator will be. Note I've given you the following text to modify:
